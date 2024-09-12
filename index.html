@@ -1,18 +1,78 @@
 <!DOCTYPE html><html lang="en-US">
 	<head>
 		<title>St. Christina Orthodox Church - Donate</title>
+		<link href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap" rel="stylesheet" nonce="cyDRb2bwnnosgVHx0JW1_Q">
 		<style>
+			/** Base */
 			:root {
 				--red: #980000;
 				--orange: #b76401;
+				--page-padding: 0 10%;
 			}
 			body {
 				display: grid;
-				width: 80%;
-				padding: 0 10% 0 10%;
 				font-family: Lora, serif;
 				font-weight: 400;
+				line-height: 1.38;
+				margin: 0px;
 			}
+			.gg {
+				vertical-align: middle;
+			}
+			.gg-arrow-left {
+				box-sizing: border-box;
+				position: relative;
+				display: block;
+				transform: scale(var(--ggs, 1));
+				width: 22px;
+				height: 22px;
+			}
+			.gg-arrow-left::after,
+			.gg-arrow-left::before {
+				content: "";
+				display: block;
+				box-sizing: border-box;
+				position: absolute;
+				left: 3px;
+			}
+			.gg-arrow-left::after {
+				width: 8px;
+				height: 8px;
+				border-bottom: 2px solid;
+				border-left: 2px solid;
+				transform: rotate(45deg);
+				bottom: 7px;
+			}
+			.gg-arrow-left::before {
+				width: 16px;
+				height: 2px;
+				bottom: 10px;
+				background: currentColor;
+			}
+
+			/** Menu*/
+			menu {
+				margin: 0px;
+				padding: 0px;
+				padding-left: 16px;
+			}
+			menu section, menu section.seal *, menu section.back * {
+				display: inline-block;
+			}
+			menu section.seal img {
+				width: 2.5em;
+				vertical-align: middle;
+			}
+			menu section.seal p {
+				margin: .5em 1em 0 1em;
+				font-size: 15pt;
+			}
+			menu section.back {
+				float: right;
+				margin: .5em 1em;
+			}
+
+			/** Header */
 			h1 {
 				color: var(--red);
 				width: 100%;
@@ -26,69 +86,174 @@
 				border-left: none;
 				border-right: none;
 			}
-			em {color: var(--orange)}
+			i {color: var(--orange);}
+			header {
+				padding: var(--page-padding);
+			}
 			header p {
 				text-align: center;
 				width: 60%;
 				margin-left: 20%;
 				font-size: 20px;
 			}
+
+			/** Offset */
 			section.offset {
 				background-color: rgba(234,234,234,1);
+				padding: 1em 10%;
+				display: grid;
+				align-items: center;
+  				justify-items: center;
 			}
-			h2 {color: var(--red)}
-			@media only screen and (max-width: 479px){
-				.jW0mOd{font-size: 16.0pt;}
+			section.offset p {
+				font-size: 15.0pt;
+  				font-weight: 700;
 			}
-			@media only screen and (min-width: 480px) and (max-width: 767px){
-				.jW0mOd{font-size: 17.0pt;}
-			}@media only screen and (min-width: 768px) and (max-width: 1279px){
-				.jW0mOd{font-size: 17.0pt;}
-			}@media only screen and (min-width: 1280px){
-				.jW0mOd{font-size: 17.0pt;}
+			a {
+				color: var(--red);
+			}
+			section.offset a {
+				text-align: center;
+			}
+
+			/** Other Ways*/
+			h2 {
+				color: var(--red);
+				text-align: center;
+			}
+			section.other {
+				margin-top: 1em;
+				padding: var(--page-padding);
+				display: grid;
+				margin-bottom: 1em;
+			}
+			section.other img {
+				width: 100%;
+			}
+			section.other article {
+				padding-right: 2em;
+			}
+			section.other article p {
+				font-family: "Gentium Basic", serif;
+				font-size: 15pt;
+			}
+
+			/** Footer */
+			footer {
+				background-color: var(--red);
+				padding: 1em;
+				display: grid;
+				align-items: center;
+  				justify-items: center;
+				color: white;
+				font-size: 15pt;
+			}
+
+			footer nav.socials button {
+				width: 32%;
+				background-color: transparent;
+				border: none;
+			}
+			footer nav.socials img {
+				width: 100%;
+			}
+			footer section p {
+				text-align: center;
+				margin: .15em 0;
+			}
+			
+			/** Media Queries */
+			@media all and (max-width: 479px) {
+				menu section.seal p {
+					margin: .5em 0 0 .5em;
+				}
+				section.offset, section.other, footer {
+					grid-template-columns: 100%;
+					grid-template-rows: auto;
+				}
+				footer nav.socials {
+					width: 75%;
+				}
+			}
+			@media all and (min-width: 480px) and (max-width: 767px){
+				section.offset, section.other, footer {
+					grid-template-columns: 100%;
+					grid-template-rows: auto;
+				}
+				footer nav.socials {
+					width: 60%;
+				}
+			}
+			@media all and (min-width: 768px) and (max-width: 1279px){
+				section.offset {
+					grid-template-columns: 60% auto;
+				}
+				section.other {
+					grid-template-columns: 50% auto;
+				}
+				footer {
+					grid-template-columns: 30% auto;
+				}
+			}
+			@media all and (min-width: 1280px) {
+				section.offset {
+					grid-template-columns: 80% auto;
+				}
+				section.other {
+					grid-template-columns: 50% auto;
+				}
+				footer {
+					grid-template-columns: 20% auto;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<menu>
-			<section>
-				<button>Home</button>
+			<section class="seal">
+				<a href="https://www.stchristinaorthodox.org"><img src="images/seal.png" alt="Logo"></a>
 				<p>St. Christina Orthodox Church</p>
 			</section>
-			<section>
-				< Back
+			<section class="back">
+				<a onclick="history.back()" href=""><span class="gg gg-arrow-left"></span> Back</a>
 			</section>
 		</menu>
 		<header>
 			<h1>Support Our Parish</h1>
 			<hr></hr>
-			<p><em>
-				Jesus looked up and saw the rich putting their gifts into the treasury; and he saw a poor widow put in two copper coins. And he said, “Truly I tell you, this poor widow has put in more than all of them; for they all contributed out of their abundance, but she out of her poverty put in all the living that she had."
-			</em></p>
+			<p>
+				<i>
+					Jesus looked up and saw the rich putting their gifts into the treasury; and he saw a poor widow put in two copper coins. And he said, “Truly I tell you, this poor widow has put in more than all of them; for they all contributed out of their abundance, but she out of her poverty put in all the living that she had."
+				</i>
+			</p>
 		</header>
 		<section class="offset">
-			<p>To make a secure one-time or automatic recurring contribution to St Christina's from your bank or credit card account, click here or on the green "Online Giving" button.</p>
-			<button></button>
+			<p>To make a secure one-time or automatic recurring contribution to St. Christina's from your bank or credit card account, click <a href="https://giving.parishsoft.com/app/giving/stc3612192">here</a> or on the green "Online Giving" button.</p>
+			<a href="https://giving.parishsoft.com/app/giving/stc3612192"><img src="images/online-giving.png"></a>
 		</section>
-		<section>
+		<section class="other">
 			<article>
 				<h2>No Cost Giving</h2>
 				<p>The following programs benefit our parish at no extra cost:</p>
-				<p>Escrip: Visit www.escrip.com, indicate that you wish to support St. Christina Orthodox Church, and register your  debit/credit cards. Applies to participating stores (both brick & mortar and online).</p>
-				<p>GoodSearch & GoodShop: Visit www.goodsearch.com and tell them you want to support St. Christina Orthodox Church. GoodSearch is a Yahoo-powered internet search engine that donates a penny each time you enter a search. Similarly, www.goodshop.com is a portal that, when used at your usual online stores, prompts the stores to donate a percentage to the parish.</p>
+				<p><b>Escrip:</b> Visit <a href="www.escrip.com">www.escrip.com</a>, indicate that you wish to support St. Christina Orthodox Church, and register your  debit/credit cards. Applies to participating stores (both brick & mortar and online).</p>
+				<p><b>GoodSearch & GoodShop:</b> Visit <a href="www.goodsearch.com">www.goodsearch.com</a> and tell them you want to support St. Christina Orthodox Church. GoodSearch is a Yahoo-powered internet search engine that donates a penny each time you enter a search. Similarly, www.goodshop.com is a portal that, when used at your usual online stores, prompts the stores to donate a percentage to the parish.</p>
 			</article>
 			<section>
-				<img>
-				<img>
+				<img src="images/singing.jpg" alt="Orthodox male trio singing in front of bier during Holy Week.">
+				<img src="images/wedding.jpg" alt="Orthodox newly wed couple greet parishioners at doorway to church.">
 			</section>
 		</section>
 		<footer>
-			<nav>
-				<button>fb</button>
-				<button>insta</button>
-				<button>yt</button>
+			<nav class="socials">
+				<button><img src="images/social/fb.png" alt="Facebook logo"></button>
+				<button><img src="images/social/insta.png" alt="Instagram logo"></button>
+				<button><img src="images/social/yt.png" alt="Youtube logo"></button>
 			</nav>
-			<p>3721 Parish Avenue	Parish Phone: (510) 739-0908	Fr. Damian: frdamian@stchristinaorthodox.org</p>
+			<section>
+				<p>3721 Parish Avenue Fremont, CA</p>	
+				<p>Office Phone: (510) 739-0908</p>
+				<p>Rector: frdamian@stchristinaorthodox.org</p>
+			</section>
 		</footer>
 	</body>
 </html>
