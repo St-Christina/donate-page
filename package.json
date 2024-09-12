@@ -1,0 +1,13 @@
+{
+	"name": "St.Christina-Donate",
+	"version": "1.0.0",
+	"description": "Donation page for St. Christina Orthodox Church",
+	"private": true,
+	"repository": {
+	  "type": "git",
+	  "url": "git+https://github.com/St-Christina/donate-page.git"
+	},
+	"author": "Damian Kulp",
+	"license": "ISC",
+	"homepage": "https://github.com/St-Christina/donate-page#readme"
+  }
