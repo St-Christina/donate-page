@@ -20,35 +20,46 @@
 			.gg {
 				vertical-align: middle;
 			}
-			.gg-arrow-left {
+			.gg-home-alt {
 				box-sizing: border-box;
 				position: relative;
 				display: block;
 				transform: scale(var(--ggs, 1));
-				width: 22px;
-				height: 22px;
+				width: 18px;
+				height: 14px;
+				border: 2px solid;
+				border-top: 0;
+				border-radius: 2px;
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+				margin-bottom: -2px;
 			}
-			.gg-arrow-left::after,
-			.gg-arrow-left::before {
+			.gg-home-alt::after,
+			.gg-home-alt::before {
 				content: "";
 				display: block;
 				box-sizing: border-box;
 				position: absolute;
-				left: 3px;
 			}
-			.gg-arrow-left::after {
-				width: 8px;
-				height: 8px;
-				border-bottom: 2px solid;
+			.gg-home-alt::before {
+				border-top: 2px solid;
 				border-left: 2px solid;
+				border-top-left-radius: 4px;
 				transform: rotate(45deg);
-				bottom: 7px;
+				top: -5px;
+				border-radius: 3px;
+				width: 14px;
+				height: 14px;
+				left: 0;
 			}
-			.gg-arrow-left::before {
-				width: 16px;
-				height: 2px;
-				bottom: 10px;
+			.gg-home-alt::after {
+				width: 6px;
+				height: 10px;
 				background: currentColor;
+				border-top-left-radius: 100px;
+				border-top-right-radius: 100px;
+				left: 4px;
+				bottom: -2px;
 			}
 
 			/** Menu*/
@@ -59,6 +70,9 @@
 			}
 			menu section, menu section.seal *, menu section.back * {
 				display: inline-block;
+			}
+			menu section {
+				cursor: pointer;
 			}
 			menu section.seal img {
 				width: 2.5em;
@@ -71,10 +85,7 @@
 			menu section.back {
 				float: right;
 				margin: .5em 1em;
-			}
-			menu section.back a {
-				text-decoration: underline;
-				cursor: pointer;
+				color: var(--red);
 			}
 
 			/** Header */
@@ -204,7 +215,7 @@
 				section.offset {
 					grid-template-columns: 80% auto;
 				}
-				section.other {s
+				section.other {
 					grid-template-columns: 50% auto;
 				}
 				footer {
@@ -216,12 +227,14 @@
 	<body>
 		<!-- Top menu -->
 		<menu>
-			<section class="seal">
+			<section class="seal" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
 				<a href="https://www.stchristinaorthodox.org"><img src="images/seal.png" alt="Logo"></a>
 				<p>St. Christina Orthodox Church</p>
 			</section>
-			<section class="back">
-				<a onclick="history.back()"><span class="gg gg-arrow-left"></span> Back</a>
+			<section class="back" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
+				<span class="gg gg-home-alt"></span>
+				&nbsp;
+				<a href="https://www.stchristinaorthodox.org">Home</a>
 			</section>
 		</menu>
 
