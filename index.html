@@ -3,6 +3,7 @@
 		<title>St. Christina Orthodox Church - Donate</title>
 		<!-- Font to match the Google Sites font -->
 		<link href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap" rel="stylesheet" nonce="cyDRb2bwnnosgVHx0JW1_Q">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
 			/** Base */
 			:root {
@@ -179,7 +180,16 @@
 			}
 			
 			/** Media Queries */
-			@media all and (max-width: 479px) {
+			@media (width < 480px) {
+				menu section {
+					float: initial !important;
+				}
+				menu {
+					display: grid;
+					grid-template-columns: 100%;
+					align-items: center;
+					justify-items: center;
+				}
 				section.offset, section.other, footer {
 					grid-template-columns: 100%;
 					grid-template-rows: auto;
@@ -188,7 +198,7 @@
 					width: 75%;
 				}
 			}
-			@media all and (min-width: 480px) and (max-width: 767px){
+			@media (480px <= width < 768px) {
 				section.offset, section.other, footer {
 					grid-template-columns: 100%;
 					grid-template-rows: auto;
@@ -197,7 +207,7 @@
 					width: 60%;
 				}
 			}
-			@media all and (min-width: 768px) and (max-width: 1279px){
+			@media (768px <= width < 1280px) {
 				section.offset {
 					grid-template-columns: 60% auto;
 				}
@@ -208,7 +218,7 @@
 					grid-template-columns: 30% auto;
 				}
 			}
-			@media all and (min-width: 1280px) {
+			@media (width >= 1280px) {
 				section.offset {
 					grid-template-columns: 80% auto;
 				}
