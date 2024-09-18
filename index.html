@@ -18,7 +18,7 @@
 				line-height: 1.38;
 				margin: 0px;
 			}
-			body article {
+			body article.realPage {
 				display: none;
 			}
 			body .pageBlocker {
@@ -264,7 +264,7 @@
 		<script>
 			function showPage() {
 				if (window.self == window.top && window == window.parent) {
-					document.querySelector("body article").style.display = "initial";
+					document.querySelector("body article.realPage").style.display = "grid";
 					document.querySelector("body .pageBlocker").style.display ="none";
 				}
 				else {
@@ -276,7 +276,7 @@
 	</head>
 	<body onload="showPage()">
 		<div class="pageBlocker"></div>
-		<article>
+		<article class="realPage">
 			<!-- Top menu -->
 			<menu>
 				<section class="seal" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
