@@ -18,6 +18,17 @@
 				line-height: 1.38;
 				margin: 0px;
 			}
+			body article {
+				display: none;
+			}
+			body .pageBlocker {
+				position:absolute;
+				height:100%;
+				width:100%;
+				text-align: center;
+				z-index: 100;
+				background-color: white;
+			}
 			.gg {
 				vertical-align: middle;
 			}
@@ -250,70 +261,85 @@
 				}
 			}
 		</style>
+		<script>
+			function showPage() {
+				if (window.self == window.top && window == window.parent) {
+					document.querySelector("body article").style.display = "initial";
+					document.querySelector("body .pageBlocker").style.display ="none";
+				}
+				else {
+					document.querySelector("body .pageBlocker").innerHTML = "<p>Website blocked due to frame loading or JavaScript is disabled.</p><p>Please enable JavaScript or navigate directly to www.stchristinaorthodox.org</p>";
+					top.location = self.location;
+				}
+			}
+		</script>
 	</head>
-	<body>
-		<!-- Top menu -->
-		<menu>
-			<section class="seal" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
-				<a href="https://www.stchristinaorthodox.org"><img src="images/seal.png" alt="Logo"></a>
-				<p>St. Christina Orthodox Church</p>
-			</section>
-			<section class="back" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
-				<span class="gg gg-home-alt"></span>
-				&nbsp;
-				<a href="https://www.stchristinaorthodox.org">Home</a>
-			</section>
-		</menu>
+	<body onload="showPage()">
+		<div class="pageBlocker"></div>
+		<article>
+			<!-- Top menu -->
+			<menu>
+				<section class="seal" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
+					<a href="https://www.stchristinaorthodox.org"><img src="images/seal.png" alt="Logo"></a>
+					<p>St. Christina Orthodox Church</p>
+				</section>
+				<section class="back" onclick="window.location.href = 'https:\/\/www.stchristinaorthodox.org'">
+					<span class="gg gg-home-alt"></span>
+					&nbsp;
+					<a href="https://www.stchristinaorthodox.org">Home</a>
+				</section>
+			</menu>
 
-		<!-- Title and scripture quote -->
-		<header>
-			<h1>Support Our Parish</h1>
-			<hr></hr>
-			<p>
-				<i>
-					Jesus looked up and saw the rich putting their gifts into the treasury; and he saw a poor widow put in two copper coins. And he said, “Truly I tell you, this poor widow has put in more than all of them; for they all contributed out of their abundance, but she out of her poverty put in all the living that she had."
-				</i>
-			</p>
-		</header>
-		<!-- Main links to donate -->
-
-		<section class="offset">
-			<p>
-				To make a secure one-time or automatic recurring contribution to St. Christina's from your bank or credit card account, click <a href="https://giving.parishsoft.com/app/giving/stc3612192">here</a> or on the green "Online Giving" button.
-			</p>
-			<a href="https://giving.parishsoft.com/app/giving/stc3612192"><img src="images/online-giving.png"></a>
-		</section>
-
-		<!-- Other ways to give -->
-		<section class="other">
-			<article>
-				<h2>No Cost Giving</h2>
-				<p>The following programs benefit our parish at no extra cost:</p>
+			<!-- Title and scripture quote -->
+			<header>
+				<h1>Support Our Parish</h1>
+				<hr></hr>
 				<p>
-					<b>Escrip:</b> Visit <a href="https://www.escrip.com">www.escrip.com</a>, indicate that you wish to support St. Christina Orthodox Church, and register your  debit/credit cards. Applies to participating stores (both brick & mortar and online).
+					<i>
+						Jesus looked up and saw the rich putting their gifts into the treasury; and he saw a poor widow put in two copper coins. And he said, “Truly I tell you, this poor widow has put in more than all of them; for they all contributed out of their abundance, but she out of her poverty put in all the living that she had."
+					</i>
 				</p>
-				<p>
-					<b>GoodSearch & GoodShop:</b> Visit <a href="https://www.goodsearch.com">www.goodsearch.com</a> and tell them you want to support St. Christina Orthodox Church. GoodSearch is a Yahoo-powered internet search engine that donates a penny each time you enter a search. Similarly, <a href="https://www.goodshop.com">www.goodshop.com</a> is a portal that, when used at your usual online stores, prompts the stores to donate a percentage to the parish.
-				</p>
-			</article>
-			<section>
-				<img src="images/singing.jpg" alt="Orthodox male trio singing in front of bier during Holy Week.">
-				<img src="images/wedding.jpg" alt="Orthodox newly wed couple greet parishioners at doorway to church.">
-			</section>
-		</section>
+			</header>
+			<!-- Main links to donate -->
 
-		<!-- Footer with social media links and contact info -->
-		<footer>
-			<nav class="socials">
-				<button><img src="images/social/fb.png" alt="Facebook logo"></button>
-				<button><img src="images/social/insta.png" alt="Instagram logo"></button>
-				<button><img src="images/social/yt.png" alt="Youtube logo"></button>
-			</nav>
-			<section>
-				<p>3721 Parish Avenue Fremont, CA</p>	
-				<p>Office Phone: (510) 739-0908</p>
-				<p>Rector: frdamian@stchristinaorthodox.org</p>
+			<section class="offset">
+				<p>
+					To make a secure one-time or automatic recurring contribution to St. Christina's from your bank or credit card account, click <a href="https://giving.parishsoft.com/app/giving/stc3612192">here</a> or on the green "Online Giving" button.
+				</p>
+				<a href="https://giving.parishsoft.com/app/giving/stc3612192"><img src="images/online-giving.png"></a>
 			</section>
-		</footer>
+
+			<!-- Other ways to give -->
+			<section class="other">
+				<article>
+					<h2>No Cost Giving</h2>
+					<p>The following programs benefit our parish at no extra cost:</p>
+					<p>
+						<b>Escrip:</b> Visit <a href="https://www.escrip.com">www.escrip.com</a>, indicate that you wish to support St. Christina Orthodox Church, and register your  debit/credit cards. Applies to participating stores (both brick & mortar and online).
+					</p>
+					<p>
+						<b>GoodSearch & GoodShop:</b> Visit <a href="https://www.goodsearch.com">www.goodsearch.com</a> and tell them you want to support St. Christina Orthodox Church. GoodSearch is a Yahoo-powered internet search engine that donates a penny each time you enter a search. Similarly, <a href="https://www.goodshop.com">www.goodshop.com</a> is a portal that, when used at your usual online stores, prompts the stores to donate a percentage to the parish.
+					</p>
+				</article>
+				<section>
+					<img src="images/singing.jpg" alt="Orthodox male trio singing in front of bier during Holy Week.">
+					<img src="images/wedding.jpg" alt="Orthodox newly wed couple greet parishioners at doorway to church.">
+				</section>
+			</section>
+
+			<!-- Footer with social media links and contact info -->
+			<footer>
+				<nav class="socials">
+					<button><img src="images/social/fb.png" alt="Facebook logo"></button>
+					<button><img src="images/social/insta.png" alt="Instagram logo"></button>
+					<button><img src="images/social/yt.png" alt="Youtube logo"></button>
+				</nav>
+				<section>
+					<p>3721 Parish Avenue Fremont, CA</p>	
+					<p>Office Phone: (510) 739-0908</p>
+					<p>Rector: frdamian@stchristinaorthodox.org</p>
+				</section>
+			</footer>
+		</article>
 	</body>
 </html>
